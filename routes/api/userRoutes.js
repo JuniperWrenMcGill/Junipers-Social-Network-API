@@ -7,7 +7,7 @@ const {
   deleteUser,
   addFriend,
   removeFriend
-} = require('../../controllers/thoughtControllers')
+} = require('../../controllers/userController')
 
 // Routes for /api/users
 router.route('/')

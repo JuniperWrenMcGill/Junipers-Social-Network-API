@@ -6,12 +6,16 @@ module.exports = {
     Thought.find({})
       .select('-__v')
       .sort({ _id: -1 })
-      .then(thoughts => res.json(thoughts))
+      .then(thoughts => {
+        console.log(thoughts); // Log the thoughts to see if the query was successful
+        res.json(thoughts);
+      })
       .catch(err => {
-        console.error(err);
+        console.error(err); // This will help identify what went wrong
         res.status(500).json(err);
       });
-  },
+},
+
 
   // GET a single thought by ID
   getThoughtById(req, res) {
